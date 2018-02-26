@@ -92,7 +92,7 @@ bitstring Substract(const bitstring &a, const bitstring &b)
   {
 
       bitstring erg(max(a.size(),b.size()), 0); // erg will hold the result of
-                                                // the addition. It is initialized
+                                                // the substraction. It is initialized
                                                 // with 0s
                                                 // Maybe we need an extra bit for
                                                 // the last carry-overflow
@@ -114,7 +114,7 @@ bitstring Substract(const bitstring &a, const bitstring &b)
               if (h<0)
                 carry = 1;
               else
-                carry =0;
+                carry = 0;
           }
 
       if (carry == 1) // erg has one bit more than the max. number of bits of a and b
