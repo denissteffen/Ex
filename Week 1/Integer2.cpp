@@ -91,7 +91,7 @@ bitstring Add(const bitstring &a, const bitstring &b)
 bitstring Substract(const bitstring &a, const bitstring &b)
   {
 
-      bitstring erg(max(a.size(),b.size()), 0); // erg will hold the result of
+      bitstring erg(max(a.size(), b.size()), 0); // erg will hold the result of
                                                 // the substraction. It is initialized
                                                 // with 0s
                                                 // Maybe we need an extra bit for
@@ -100,7 +100,7 @@ bitstring Substract(const bitstring &a, const bitstring &b)
 
 
       bool carry = 0;
-      int h=0;
+      int h = 0;
 
       for (unsigned i = 0; i<erg.size(); i++)
         {
@@ -109,7 +109,7 @@ bitstring Substract(const bitstring &a, const bitstring &b)
           // We use the AccessBit function because i might
           // be out if range
 
-              h =   int(AccessBit(a,i))- int(AccessBit(b,i)) - int(carry);
+              h = int(AccessBit(a,i)) - int(AccessBit(b,i)) - int(carry);
               erg[i] = h%2;
               if (h<0)
                 carry = 1;
