@@ -1,0 +1,42 @@
+\documentclass[a4paper,11pt,french]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathrsfs}
+\usepackage[english]{babel}
+\usepackage{mathtools} % includes amsmath
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{todonotes}
+
+\usepackage{multirow}
+\usepackage{enumerate}
+
+\usepackage{tikz}
+\usepackage{framed}
+\usepackage[colorlinks]{hyperref}
+
+
+\title{Discrete Optimisation: Homework \#2, Ex. \#8}
+\author{Denis Steffen, Yann Eberhard \& Gaëtan Bossy}
+
+\begin{document}
+
+\maketitle
+We know that $\forall A,B\in\mathbb{R}^{n\cdot n},\,\,det(A\cdot B)=det(A)\cdot det(B)$. So if we prove that $det((M_{2^k})^2)=(2^k)^{2^k}$, it'll mean $|det(M_{2^k})|=(2^k)^{2^{k-1}}$. One can easily compute this multiplication with blocks: 
+\begin{equation*}
+M_{2^k}\cdot M_{2^k}=
+\begin{pmatrix}
+    2\cdot(M_{2^{k-1}})^2 & M_{2^{k-1}}-M_{2^{k-1}} \\ 
+    M_{2^{k-1}}-M_{2^{k-1}} &  2\cdot(M_{2^{k-1}})^2
+  \end{pmatrix}=
+  \begin{pmatrix}
+    2\cdot(M_{2^{k-1}})^2 & 0_{2^{k-1}\cdot 2^{k-1}} \\ 
+    0_{2^{k-1}\cdot 2^{k-1}} &  2\cdot(M_{2^{k-1}})^2
+  \end{pmatrix}
+ \end{equation*}
+ This means that if $(M_{2^{k-1}})^2$ is diagonal, then $(M_{2^{k}})^2$ is also a diagonal matrix. As $(M_{2^{0}})^2=(1)$ is a diagonal matrix, this means that $(M_{2^{k}})^2$ is diagonal for every $k\in\mathbb{N}$. The determinant of a diagonal matrix being the product of its diagonal elements, we just need to compute these. In our previous calculation, we saw that the diagonal elements on $M_{2^k}^2$ were twice as large as the diagonal elements of $M_{2^{k-1}}^2$. As the diagonal element of $M_{2^0}^2$ is 1, we can easily deduce that the diagonal elements on $M_{2^k}^2$ are $2^k$. This means that $det(M_{2^k}^2)=(2^k)^{2^k}$, which proves that $|det(M_n)|=n^{\frac{n}{2}}$.
+  
+
+\end{document}
