@@ -34,5 +34,7 @@ Let $\lambda_{max}$ be $max\{\lambda \geq 0: A(x^*\pm\lambda d) \leq b\}$. Then 
 $y^* = x^* - \lambda_{max}d$, one of which has to satisfy the condition of the claim. 
 
 This means that we can use this process at most $n$ times to find an $x$ such that $Ax=b$ which would be an extreme point.
-Finding $d$ is solving a system of n equations, which can be done in polynomial time as seen during the lecture. Finding $\lambda_{max} = min\{\frac{(b-A_{x^*}x^*)_i}{d_i}\}$ can be done in polynomial time. In the case where $c^Td=0$, then $\lambda_{max}=min\{\frac{(b-Ax^*)_i}{d_i}\}$ which can be easily calculated in polynomial time.
+Finding $d$ is solving a system of n equations, which can be done in polynomial time as seen during the lecture. 
+We only consider all non-zero components of $d$ because if $d_i = 0$ : $\mid(\frac{(b-A_{x^*}x^*)_i}{d_i})\mid \longrightarrow \infty$.
+Finding $\lambda_{max} = min\{\frac{(b-A_{x^*}x^*)_i}{d_i}\}$ can be done in polynomial time. In the case where $c^Td=0$, then $\lambda_{max}=min\{\frac{(b-Ax^*)_i}{d_i}\}$ which can be easily calculated in polynomial time.
 \end{document}
