@@ -25,7 +25,7 @@
 
 \maketitle
 If $x^*$ is feasible, we will call $A_{x^*}x\leq b_{x^*}$ the subsystem of $Ax\leq b$ that is satisfied by $x^*$ with equality. 
-We can notice that if $rank(A_{x^*}) = n$, then $x^*$ is an extreme point since the unique solution of $A_{x^*}x = b_{x^*}$ is $x^*$.
+We can notice that if $rank(A_{x^*}) = n$, then $x^*$ is an extreme point since the unique solution of $A_{x^*}x = b_{x^*}$ is $x^*$ (Theorem 3.1).
 Suppose now that $rank(A_{x^*}) < n$. Similarly to the proof of Thm 3.2, we claim that if $x^*$ is feasible, then there exists a $y^*$ with $c^T y^* > c^T x^*$ and $rank(A_{y^*}) > rank(A_{x^*})$. If we prove this claim, it will imply that in at most $n$ steps we will find an extreme point.\\
 To prove this, let $d \not= 0 \in \mathbb{R}^n$ be a vector with $A_{x^*}d = 0$. If $c^T d < 0$, we can switch it to $-d$. As $c^T d > 0$, we consider the points $x^* + \lambda d$ with $\lambda> 0$ and let $\lambda_{max}=max\{\lambda$ such that $x^* + \lambda d$ is feasible$\}$. 
 $Rank(A_{(x^*+\lambda d)})>rank(A_{x^*})$ and $c^T(x^*+\lambda d)>c^Tx^*$ so the claim is verified. \\
