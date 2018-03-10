@@ -28,9 +28,11 @@ If $x^*$ is feasible, we will call $A_{x^*}x\leq b_{x^*}$ the subsystem of $Ax\l
 We can notice that if $rank(A_{x^*}) = n$, then $x^*$ is an extreme point since the unique solution of $A_{x^*}x = b_{x^*}$ is $x^*$.
 Suppose now that $rank(A_{x^*}) < n$. Similarly to the proof of Thm 3.2, we claim that if $x^*$ is feasible, then there exists a $y^*$ with $c^T y^* > c^T x^*$ and $rank(A_{y^*}) > rank(A_{x^*})$. If we prove this claim, it will imply that in at most $n$ steps we will find an extreme point.\\
 To prove this, let $d \not= 0 \in \mathbb{R}^n$ be a vector with $A_{x^*}d = 0$. If $c^T d < 0$, we can switch it to $-d$. As $c^T d > 0$, we consider the points $x^* + \lambda d$ with $\lambda> 0$ and let $\lambda_{max}=max\{\lambda$ such that $x^* + \lambda d$ is feasible$\}$. 
-$Rank(A_{x^*+\lambda d})>rank(A_{x^*})$ and $c^T(x^*+\lambda d)>c^Tx^*$ so the claim is verified. \\
+$Rank(A_{(x^*+\lambda d)})>rank(A_{x^*})$ and $c^T(x^*+\lambda d)>c^Tx^*$ so the claim is verified. \\
 We now prove the claim in the case where $c^T d = 0$. If $c^Td=0$, then $Ad \not= 0$ because $rank(A) = n$. 
 Let $\lambda_{max}$ be $max\{\lambda \geq 0: A(x^*\pm\lambda d) \leq b\}$. Then one can choose $y^* = x^* + \lambda_{max}d$ or
 $y^* = x^* - \lambda_{max}d$, one of which has to satisfy the condition of the claim. 
+
 This means that we can use this process at most $n$ times to find an $x$ such that $Ax=b$ which would be an extreme point.
+Finding $d$ is solving a system of n equations, which can be done in polynomial time as seen during the lecture. Finding $\lambda_{max} = min\{\frac{(b-A_{x^*}x^*)_i}{d_i}\}$ can be done in polynomial time. In the case where $c^Td=0$, then $\lambda_{max}=min\{\frac{(b-Ax^*)_i}{d_i}\}$ which can be easily calculated in polynomial time.
 \end{document}
