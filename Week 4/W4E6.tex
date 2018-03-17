@@ -33,20 +33,20 @@
     By exercise \#2, cone$(\widetilde{X})=\{ x\in \mathbb{R}^{n} : a_{ i}^{\prime -1}x \geq 0, i=1, ... , k ; a_{j}^{\prime -1}x = 0, j=k+1, ... , n  \}$.
     Since cone$(\widetilde{X})$ is the finite intersection of the pre-image by a linear application of a closed set (either $[0, \infty[$ or $\{0\}$), it is also closed. 
     \\
-    There is a finite number of $\widetilde{X}$ since $X$ is finite. So, we can enumerate all such $\widetilde{X}$. We will prove that $cone(X)=\displaystyle{\bigcup_{ i=1}^{m}} cone(\widetilde{X_{i}})$. 
+    There is a finite number of $\widetilde{X}$ since $X$ is finite. So, we can enumerate all such $\widetilde{X}$. We will prove that $cone(X)=\displaystyle{\bigcup_{ i=1}^{m}}$ cone$(\widetilde{X_{i}})$. 
     \\
-    By construction, $\forall x \in cone(X)$ $\exists j \in \{1, ..., m\}$ such that $x \in cone(\widetilde{X_{j}})$. On the other way, if $x \in \displaystyle{\bigcup_{ i=1}^{m}} cone(\widetilde{X_{i}})$, there exists $j \in \{1, ... , m \}$ such that $x \in cone(\widetilde{X_{j}})$. 
-    By definition of a cone-hull and since every vectors of $\widetilde{X}$ are also in $cone(X)$ ($\widetilde{X_{j}} \subseteq X$), this implies $x \in cone(X)$.
+    By construction, $\forall x \in$ cone$(X)$ $\exists j \in \{1, ..., m\}$ such that $x \in$ cone$(\widetilde{X_{j}})$. On the other way, if $x \in \displaystyle{\bigcup_{ i=1}^{m}}$ cone$(\widetilde{X_{i}})$, there exists $j \in \{1, ... , m \}$ such that $x \in$ cone$(\widetilde{X_{j}})$. 
+    By definition of a cone-hull and since every vectors of $\widetilde{X}$ are also in cone$(X)$ ($\widetilde{X_{j}} \subseteq X$), this implies $x \in$ cone$(X)$.
     \\
-    $Cone(X)$ is closed because it is equal to a finite union of closed sets.
+    cone$(X)$ is closed because it is equal to a finite union of closed sets.
     \\
     \\
-    $\forall x, y \in cone(X)$, $\forall \lambda \in [0,1]$ we need to show $\lambda 
-    x +(1-\lambda)y \in cone(X)$. $x=\displaystyle{\sum_{i=1}^{t}} \alpha_{i} a_{i}$ and $y=\displaystyle{\sum_{i=1}^{t}} \beta_{i} a_{i}$ since $x,y \in cone(X)$.
+    $\forall x, y \in$ cone$(X)$, $\forall \lambda \in [0,1]$ we need to show $\lambda 
+    x +(1-\lambda)y \in$ cone$(X)$. $x=\displaystyle{\sum_{i=1}^{t}} \alpha_{i} a_{i}$ and $y=\displaystyle{\sum_{i=1}^{t}} \beta_{i} a_{i}$ since $x,y \in$ cone$(X)$.
     \\
     $\lambda x +(1-\lambda)y = \displaystyle{\sum_{i=1}^{t}} (\lambda \alpha_{i} + (1-\lambda)\beta_{i}) a_{i}$, we can replace $\lambda \alpha_{i} + (1-\lambda)\beta_{i}$ by $\gamma_{i}$. Since $\lambda \in [0,1]$ and $\alpha_{i}, \beta_{i} \in \mathbb{R}_{\geq 0}$, $\gamma_{i} \geq 0$. This implies that $cone(X)$ is convex :
     \begin{equation*}
-    \lambda x +(1-\lambda)y = \displaystyle{\sum_{i=1}^{t}} \gamma_{i} a_{i} \in cone(X)
+    \lambda x +(1-\lambda)y = \displaystyle{\sum_{i=1}^{t}} \gamma_{i} a_{i} \in$ cone$(X)
     \end{equation*}
     
     
