@@ -26,18 +26,18 @@
     \maketitle
     
     We have to prove that $P = \{ x \in \mathbb{R}^n : Ax \leq b\}$, $P \not = \emptyset $, contains a line if and only if $A$ does not have full column-rank.
-    $A$ does not have full column-rank if ker$(A) \not = \mathbf {0}$. 
+    We know from linear algebra that $A$ does not have full column-rank if ker$(A) \not = \mathbf {0}$. 
 \\
 
     First, we prove  $\Rightarrow$ : \\
-    By hypothesis, we know that P contains a line, i.e. there exits a nonzero $v \in \mathbb{R}^n$ and an $x^* \in \mathbb{R}^n$ such that for all $\lambda \in \mathbb{R}$ we have $ p \coloneqq x^* + \lambda \cdot v \in P$. 
+    By hypothesis, we know that P contains a line, i.e. there exits a nonzero $v \in \mathbb{R}^n$ and a $x^* \in \mathbb{R}^n$ such that for all $\lambda \in \mathbb{R}$ we have $ p \coloneqq x^* + \lambda \cdot v \in P$. 
     We define the rows of $A \in \mathbb{R}^{m \times n}$ by $a_j$.
     We need to prove that there exists a nonzero vector $u \in$ ker$(A)$. We choose $u = v$ and let's prove that $Av = \mathbf 0$.  
     We'll prove it by contradiction : we suppose that there exists an index $1 \leq i \leq m$ such that $a_i^T*v \not = 0$. We have that, for all $\lambda$ : 
     \begin{equation}
         a_i^Tp = a_i^Tx^* + \lambda \cdot a_i^Tv
     \end{equation}
-    If we take a $\lambda$ with $\left| \lambda \right| = \frac{ b_i - a_i^T*x^*}{a_i^T*v} + \epsilon$ ($\epsilon > 0$), (1) gives $a_i^T*p = b_i + \epsilon > b_i$. 
+    If we take a $\lambda$ with $\left| \lambda \right| = \frac{ (b_i  + \epsilon) - a_i^T*x^*}{a_i^T*v} $ ($\epsilon > 0$), (1) gives $a_i^T*p = b_i + \epsilon > b_i$. 
     This means that $p \not \in P$ but this is a contradiction. Thus, $A$ does not have full column-rank.
     \\
 
