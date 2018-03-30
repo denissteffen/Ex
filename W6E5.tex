@@ -1,0 +1,62 @@
+\documentclass[a4paper,11pt,french]{article}
+
+    \usepackage[utf8]{inputenc}
+    
+    \usepackage{mathrsfs}
+    \usepackage[english]{babel}
+    \usepackage{mathtools} % includes amsmath
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{amscd}
+    \usepackage{todonotes}
+    
+    \usepackage{multirow}
+    \usepackage{enumerate}
+    
+    \usepackage{tikz}
+    \usepackage{framed}
+    \usepackage[colorlinks]{hyperref}
+    
+    
+    \title{Discrete Optimization: Homework \#6, Ex. \#5}
+    \author{Denis Steffen, Yann Eberhard \& Gaëtan Bossy}
+    
+    \begin{document}
+    
+    \maketitle
+    We must solve the following Linear Program with the Simplex Algorithm:
+    \begin{displaymath}
+    c=\left(\begin{array}{c} 6\\ 9\\ 2\\ \end{array}\right)\quad A=\left(
+\begin{array}{ccc}
+1 & 3 & 1\\
+0 & 1 & 1 \\
+3 & 3 & -1\\
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1\\
+\end{array}
+\right) \quad b=\left(\begin{array}{c}-4\\-1\\1\\0\\0\\0\\ \end{array}\right)\quad x_{0}^*=\left(\begin{array}{c}-1\\-1\\0\\\end{array}\right)
+  \end{displaymath}
+  \section{Step 1}
+  \begin{displaymath}
+  B_0=\{1,2,6\}\quad A_{B_0}=\left(
+\begin{array}{ccc}
+1 & 3 & 1\\
+0 & 1 & 1 \\
+0 & 0 & 1\\
+\end{array}
+\right) \Rightarrow \lambda_0=\left(\begin{array}{c} 6\\ -9\\ 5\\ \end{array}\right)\Rightarrow d_0=\left(\begin{array}{c} 3\\ -1\\ 0\\ \end{array}\right)\Rightarrow K=\{3,4\}
+   \end{displaymath}
+   The min is attained in k=3
+     \section{Step 2}
+  \begin{displaymath}
+  B_1=\{1,3,6\}\quad A_{B_1}=\left(
+\begin{array}{ccc}
+1 & 3 & 1\\
+3 & 3 & -1 \\
+0 & 0 & 1\\
+\end{array}
+\right) \Rightarrow \lambda_1=\left(\begin{array}{c} 1.5\\ 1.5\\ 2\\ \end{array}\right)\Rightarrow B_1\,is\,optimal
+   \end{displaymath}
+    
+    \end{document}
