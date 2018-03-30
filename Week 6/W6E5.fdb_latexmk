@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1522426857 "/Users/denis.steffen/Documents/Etudes supérieures/BA 4/Discrete Optimization/Exercices/Ex/Week 6/W6E5.tex" "W6E5.pdf" "W6E5" 1522426858
-  "/Users/denis.steffen/Documents/Etudes supérieures/BA 4/Discrete Optimization/Exercices/Ex/Week 6/W6E5.tex" 1522426857 2493 086514b872ce572f9785eaf88026a005 ""
+["pdflatex"] 1522427003 "/Users/denis.steffen/Documents/Etudes supérieures/BA 4/Discrete Optimization/Exercices/Ex/Week 6/W6E5.tex" "W6E5.pdf" "W6E5" 1522427004
+  "/Users/denis.steffen/Documents/Etudes supérieures/BA 4/Discrete Optimization/Exercices/Ex/Week 6/W6E5.tex" 1522427003 2518 a68ee857c393c767648b54beccf6508f ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -164,10 +164,10 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1512222942 4129592 1f4bb2c53c6290892b280f50e2c8baea ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "W6E5.aux" 1522426858 1137 cca32a7e90fdefef703a52fbbab0fc6e ""
-  "W6E5.out" 1522426858 123 bbf1e0197d5b9c5e62d0854c55bf8487 ""
+  "W6E5.aux" 1522427004 1137 cca32a7e90fdefef703a52fbbab0fc6e ""
+  "W6E5.out" 1522427004 123 bbf1e0197d5b9c5e62d0854c55bf8487 ""
   (generated)
-  "W6E5.out"
-  "W6E5.log"
-  "W6E5.aux"
   "W6E5.pdf"
+  "W6E5.aux"
+  "W6E5.log"
+  "W6E5.out"
