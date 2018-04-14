@@ -1,0 +1,76 @@
+\documentclass[a4paper,11pt,french]{article}
+
+    \usepackage[utf8]{inputenc}
+    
+    \usepackage{mathrsfs}
+    \usepackage[english]{babel}
+    \usepackage{mathtools} % includes amsmath
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{amscd}
+    \usepackage{todonotes}
+    
+    \usepackage{multirow}
+    \usepackage{enumerate}
+    
+    \usepackage{tikz}
+    \usepackage{framed}
+    \usepackage[colorlinks]{hyperref}
+    \usepackage[T1]{fontenc}
+    
+  
+    
+    \title{Discrete Optimization: Homework \#7, Ex. \#3}
+    \author{Denis Steffen, Yann Eberhard \& Gaëtan Bossy}
+    
+    \begin{document}
+    
+    \maketitle
+   We consider the following LP :  max$\{ c^Tx : Ax \leq b, b\in \mathbb{R}^n \} $ and assume that it is feasible and bounded. Thus, we know that there exists an optimal solution, say $x^*$. 
+   We also know that the dual of our LP : min$ \{ b^Ty : A^Ty = c, y \geq 0 \} $ is feasible and bounded by the Strong Duality theorem. That's why, we have that, for $y^*$ an optimal solution of the dual LP : 
+   $c^Tx^* = b^Ty^*$ i.e. the optimal values coincide. 
+
+   But $x^*$ is optimal for the primal LP and $y^*$ for the dual LP. So for all $(x^*, y^*)$ satisfying the previous equation and the respective constraints of primal and dual LP, $(x^*, y^*)$ will be optimal. 
+   In other words, this means that all $(x, y)$ in the following Polyhedron P are optimal.
+\begin{displaymath}
+     c^Tx = b^Ty
+    \end{displaymath} 
+    \begin{displaymath}
+       Ax \leq b
+     \end{displaymath}
+     \begin{displaymath}
+      A^Ty = c
+    \end{displaymath}
+    \begin{displaymath}
+      y \geq 0
+    \end{displaymath}
+    We have $ P = \{ \tilde{x} \in \mathbb{R}^n : \tilde{A} \tilde{x} \leq \tilde{b} \} $ with $\tilde{A} =  \begin{pmatrix}
+       c^T & -b^T\\
+      -c^T & b^T\\
+      A & 0\\
+      0 & A^T\\
+      0 & -A^T\\
+      0 & -I\\
+    \end{pmatrix},
+      \tilde{x} = 
+    \left(\begin{array}{c}
+      x\\
+      y\\
+    \end{array} \right)$ and $ \tilde{b} = \left( \begin{array}{c} 
+    0\\
+    0\\
+    b\\
+    c\\
+    -c\\ 
+    0\\
+    \end{array} 
+    \right).$ 
+
+
+    \noindent Since we know that there exists the optimal solution $(x^*, y^*)$ of the LP, the vector $w = \left(\begin{array}{c}
+    x^*\\
+    y^*\\  
+    \end{array}
+   \right )$ is in P. So using the oracle algorithm on the Polyhedron P in a single call, we find an optimal solution of our LP.
+  
+  \end{document}
