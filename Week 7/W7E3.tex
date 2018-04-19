@@ -44,7 +44,7 @@
     \begin{displaymath}
       y \geq 0
     \end{displaymath}
-    We have $ P = \{ \tilde{x} \in \mathbb{R}^n : \tilde{A} \tilde{x} \leq \tilde{b} \} $ with $\tilde{A} =  \begin{pmatrix}
+    We have $ P = \{ \tilde{x} \in \mathbb{R}^2n : \tilde{A} \tilde{x} \leq \tilde{b} \} $ with $\tilde{A} =  \begin{pmatrix}
        c^T & -b^T\\
       -c^T & b^T\\
       A & 0\\
@@ -71,6 +71,6 @@
     x^*\\
     y^*\\  
     \end{array}
-   \right )$ is in P. So using the oracle algorithm on the Polyhedron P in a single call, we find an optimal solution of our LP.
+   \right )$ is in P and is optimal because $x^*$ and $y^*$ respectively maximized and minimized their objective functions. So using the oracle algorithm on the Polyhedron P in a single call, we find an optimal solution of our LP.
   
   \end{document}
