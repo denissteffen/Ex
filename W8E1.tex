@@ -1,0 +1,52 @@
+\documentclass[a4paper,11pt,french]{article}
+
+    \usepackage[utf8]{inputenc}
+    
+    \usepackage{mathrsfs}
+    \usepackage[english]{babel}
+    \usepackage{mathtools} % includes amsmath
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{amscd}
+    \usepackage{todonotes}
+    
+    \usepackage{multirow}
+    \usepackage{enumerate}
+    
+    \usepackage{tikz}
+    \usepackage{framed}
+    \usepackage[colorlinks]{hyperref}
+    \usepackage[T1]{fontenc}
+    
+  
+    
+    \title{Discrete Optimization: Homework \#8, Ex. \#1}
+    \author{Denis Steffen, Yann Eberhard \& Gaëtan Bossy}
+    
+    \begin{document}
+    
+    \maketitle
+We use basic binary search on each of the dimension. For every $1\leq i\leq n$, we use the oracle algorithm at most $log_2(B)$ times and find the i-th coordinate of the red point. By doing this $n$ times, we can find every coordinate of the unique red point. Thus our main algorithm will call the secondary algorithm at most $n$ times, and the secondary algorithm will call the oracle algorithm %$log_2(B+1)=$
+$O(log(b))$ times, which means the main algorithm will call the oracle algorithm $O(n\cdot log(B))$ times.\\ \\
+Main algorithm: $main(B)$, with $B\in\mathbb{N}$\\
+For $i=1\rightarrow n$:
+	 \begin{verse}
+	 $x^*_i=alg(i,0,B)$
+	 \end{verse}
+return $x^*$\\ \\
+Secondary algorithm: $alg(i,a,b)$, with $i$ an index, $a,b\in\mathbb{N}$\\
+If $a=b$
+\begin{verse}
+return $a$
+\end{verse}
+else
+\begin{verse}
+ if $oracle(i,a+floor(b-a/2))=true$ 
+ \begin{verse}
+ return $alg(i,a,a+floor(b-a/2))$ 
+ \end{verse}
+ else
+ \begin{verse} return $alg(i,a+floor(b-a/2),b)$
+ \end{verse}
+\end{verse}
+  \end{document}
