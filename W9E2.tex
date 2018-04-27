@@ -1,0 +1,35 @@
+\documentclass[a4paper,11pt,french]{article}
+
+    \usepackage[utf8]{inputenc}
+    
+    \usepackage{mathrsfs}
+    \usepackage[english]{babel}
+    \usepackage{mathtools} % includes amsmath
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{amscd}
+    \usepackage{todonotes}
+    
+    \usepackage{multirow}
+    \usepackage{enumerate}
+    
+    \usepackage{tikz}
+    \usepackage{framed}
+    \usepackage[colorlinks]{hyperref}
+    \usepackage[T1]{fontenc}
+    
+  
+    
+    \title{Discrete Optimization: Homework \#9, Ex. \#2}
+    \author{Denis Steffen, Yann Eberhard \& Gaëtan Bossy}
+    
+    \begin{document}
+    
+    \maketitle
+    
+    We will show this by induction. If $n=2$ then, since the polyhedron is bounded and full-dimensional, there exist three vertices that are affinely independant.
+    
+    
+    We now suppose that the result is correct for $n$ and we will show it for $n+1$.  Since $P$ is bounded and full-dimensional, there exists an hyperplane $H_{i}=\{x \in \mathbb{R}^n$ : $A_i x=b_i \}$ (where $A_i$ is the i-th row of $A$) such that its intersection with $P$ is not empty. The intersection of this hyperplane and the polyhedron $P$ can be seen as a full-dimensional and bounded polyhedron $P'$ in $\mathbb{R}^{n-1}$, we know by induction hypothesis that there exist $v_1,...,v_n$ that are affinely independant vertices of $P'$. These vertices seen in $\mathbb{R}^n$ are also vertices of $P$ since they satisfy with equality the equation of the hyperplane. By the hint and because $P$ is bounded and full-dimensional, there exists a vertex $v_{n+1}$ that is not contained in the hyperplane $H_i$. This implies that the vertices $v_1,...,v_{n+1}$ are affinely independant.
+
+  \end{document}
