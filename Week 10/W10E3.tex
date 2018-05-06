@@ -74,5 +74,9 @@ While $Q\not=\emptyset$:\\
 
 If $Q=\emptyset$ and $V\not=\emptyset$, assert there exists a directed cycle in $G$, otherwise return $T$ the topological sort.\\
 
-Don't forget that $Q$ is just an unsorted set while $T$ has a set order, if $i<j$, then $T[i]<T[j]$.
-  \end{document}
+Don't forget that $Q$ is just an unsorted set while $T$ has a set order, if $i<j$, then $T[i]<T[j]$.\\
+
+
+Total Running Time : \\
+We showed that our algorithm needs $O(m)$ arithmetic operations for the calculation of the degrees, $O(n)$ for the zero-degree vertices search and $O(m)$ for the update of the degrees. Thus, the total running time is in $O(m+n)$.
+\end{document}
