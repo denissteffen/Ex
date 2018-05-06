@@ -1,0 +1,76 @@
+\documentclass[a4paper,11pt,french]{article}
+
+    \usepackage[utf8]{inputenc}
+    
+    \usepackage{mathrsfs}
+    \usepackage[english]{babel}
+    \usepackage{mathtools} % includes amsmath
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{amscd}
+    \usepackage{todonotes}
+    
+    \usepackage{multirow}
+    \usepackage{enumerate}
+    
+    \usepackage{tikz}
+    \usepackage{framed}
+    \usepackage[colorlinks]{hyperref}
+    \usepackage[T1]{fontenc}
+    
+  
+    
+    \title{Discrete Optimization: Homework \#10, Ex. \#3}
+    \author{Denis Steffen, Yann Eberhard \& Gaëtan Bossy}
+    
+    \begin{document}
+    
+    \maketitle
+We have a graph $G=(V,A)$ with $|V|=n$, $|A|=m$.
+We'll use the following fact: If there exist no directed cycle in $G$, then there exist a vertex with ingoing degree 0. \\
+Proof: Suppose there exist no vertex with ingoing degree 0. Then, we can go through each vertex and keep going, but as the number of vertices is finite, there has to be a point at which we go through a vertex already visited previously, thus we went through a directed cycle.\\
+
+We calculate the ingoing degree of each element ($deg(v)=|\{(u,v)\in A,v\in V\}$), which takes $O(m)$ arithmetic operations. If there exist no directed cycle, we can find a vertex with ingoing degree 0. We look for all such elements and add them to the queue. This takes O(n) arithmetic operations the first time we do it, but We'll be able to do it for $O(1)$ every other time. If we cannot find a vertex with ingoing degree 0, we assert that there exist a directed cycle. We remove the said vertex and every edge that touches it, and put it as the right element in our topological sort. We can update the degree of each element in our table, which will take $O(m)$ operations in total (every edge will be removed once during the entire algorithm). During the update of the ingoing degrees, for each edge we update, we check if its ingoing degree is 0, and if yes add it to the queue of element to be removed, which takes $O(1)$ arithmetic operations. We then repeat this process at most $n$ times and get either a topological sort or assert that there exist a directed cycle.
+\section{The Algorithm}
+Input: A graph $G=(V,A)$ with $|V|=n$, $|A|=m$.\\
+Output: $T$, a topological sort.\\
+Initialization:\\
+ $D=[|\{(u_1,v)\in A,v\in V\}|,...,|\{(u_n,v)\in A,v\in V\}|]$, $Q=\emptyset$, $T=[]$\\
+ \begin{tabular}{|l|}
+ \hline
+For $i=1\rightarrow n$:\\
+\hline
+%\begin{verse}
+\qquad If $D[i]=0$, add $v_i$ to $Q$.\\
+%\end{verse}
+\hline
+\end{tabular}\\
+\begin{tabular}{|l|}
+\hline
+While $Q\not=\emptyset$:\\
+\hline
+%\begin{verse}
+\qquad Choose $q\in Q$. \\
+\qquad Remove $q$ from $G$: $V:=V\textbackslash \{q\}$\\
+\qquad $T:=[T\,\,q]$\\
+\qquad Update D: \\
+%\begin{verse}
+\begin{tabular}{|l|}
+\hline
+\qquad $\forall e=(q,s)\in\{(q,v)\in A, \, v\in V\}$:\\
+\hline
+%\begin{verse}
+\qquad \qquad$D[s]:=D[s]-1$\\
+\qquad \qquad$A:=A\textbackslash \{(q,s)\}$\\
+\qquad \qquad If $D[s]=0$, $Q:=Q\cup\{s\}$.\\
+\hline
+\end{tabular}\\
+%\end{verse}
+%\end{verse}
+%\end{verse}
+\hline
+\end{tabular}\\
+If $Q=\emptyset$ and $V\not=\emptyset$, assert there exist a directed cycle in $G$, otherwise return $T$ the topological sort.\\
+
+Don't forget that $Q$ is just an unsorted set while $T$ has a set order, if $i<j$, then $T[i]<T[j]$.
+  \end{document}
