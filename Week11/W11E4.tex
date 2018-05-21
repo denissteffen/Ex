@@ -31,16 +31,16 @@
     
     
     \textbf{Algorithm :} \\
-    Input : $G=(V,E)$, a graph.
+    Input : $G=(V,E)$, a graph \\
+     Output : $M$ a maximum cardinality matching\\
     
     
-    While $oracle(G)=false$ : We delete the vertex $v$ with minimum degree such that the graph without $v$ remains connected and update $G=(V\backslash{\{v\}},E')$ where $E' := \{(a,b) \in E : a\neq  v$ and $b \neq v \}$.
+    
+    While $oracle(G)=false$ : We delete the vertex $v$ with minimum degree such that the graph without $v$ remains connected and update $G=(V\backslash{\{v\}},E')$ where $E' := \{(a,b) \in E : a\neq  v$ and $b \neq v \}$.\\
     
     
-    Then we take the edge $e=(u,v)$ such that the sum of $deg(u)$ and $deg(v)$ is minimal and such that the graph without this edge remains connected. We put $M:=\{ e\}$ and update $G=(V\backslash \{u,v\},E\backslash \{e\})$. We repeat this until $V=\varnothing$ and each time we add in $M$ the edge that we delete.  \\\\
-    
-
-
-
-At the end, $M$ is a maximum cardinality matching of $G=(V,E)$ obtained with at most $|V|+|E|$ calls to the oracle.
+   Then we take a vertex $v$ from the updated graph $G=(V,E)$. Let $F=\{(u,v) : (u,v) \in E\}$, we call $oracle( (V,(E\backslash F ) \cup \{f\}))$ for every $f \in F$ until there is a positive response of the oracle for a particular $f=(u,v) \in F$ (there exists a such $f$ because $G$ has a perfect matching). We put $f$ in $M$ and update $G=(V\backslash \{u,v\},E\backslash (F \cup G))$ where $G=\{(u,w) \in E\}$. \\
+   We repeat this until $G$ is an empty graph. \\\\ 
+ 
+At the end, $M$ is a maximum cardinality matching of the graph $G$ obtained with at most $|V|+|E|$ calls to the oracle.
   \end{document}
