@@ -27,7 +27,7 @@
     
     \maketitle
 
-    We assume that $ e_1 \neq  e_2$  $\forall e_1,e_2\in E$.  If the graph isn't connected, we use the algorithm for every connected components.\\\\
+    We assume that all vertices of $G$ are connected by at most one edge.  If the graph isn't connected, we use the algorithm for every connected components.\\\\
     
     
     \textbf{Algorithm :} \\
@@ -39,8 +39,8 @@
     While $oracle(G)=false$ : We delete the vertex $v$ with minimum degree such that the graph without $v$ remains connected and update $G=(V\backslash{\{v\}},E')$ where $E' := \{(a,b) \in E : a\neq  v$ and $b \neq v \}$.\\
     
     
-   Then we take a vertex $v$ from the updated graph $G=(V,E)$. Let $F=\{(u,v) : (u,v) \in E\}$, we call $oracle( (V,(E\backslash F ) \cup \{f\}))$ for every $f \in F$ until there is a positive response of the oracle for a particular $f=(u,v) \in F$ (there exists a such $f$ because $G$ has a perfect matching). We put $f$ in $M$ and update $G=(V\backslash \{u,v\},E\backslash (F \cup G))$ where $G=\{(u,w) \in E\}$. \\
-   We repeat this until $G$ is an empty graph. \\\\ 
+   Then we take a vertex $v$ from the updated graph $G=(V,E)$. Let $F_{v}=\{(u,v) : (u,v) \in E\}$, we call $oracle( (V,(E\backslash F_{v} ) \cup \{f\}))$ for every $f \in F_{v}$ until there is a positive response of the oracle for a particular $f=(u,v) \in F_{v}$ (there exists a such $f$ because $G$ has a perfect matching). We put $f$ in $M$ and update $G=(V\backslash \{u,v\},E\backslash (F_{v} \cup G))$ where $G=\{(u,w) \in E\}$. \\
+   We repeat this last part until $G$ is an empty graph. \\\\ 
  
 At the end, $M$ is a maximum cardinality matching of the graph $G$ obtained with at most $|V|+|E|$ calls to the oracle.
   \end{document}
