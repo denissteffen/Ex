@@ -39,8 +39,8 @@
     While $oracle(G)=false$ : We delete the vertex $v$ with minimum degree such that the graph without $v$ remains connected and update $G=(V\backslash{\{v\}},E')$ where $E' := \{(a,b) \in E : a\neq  v$ and $b \neq v \}$.\\
     
     
-   Then we take a vertex $v$ from the updated graph $G=(V,E)$. Let $F_{v}=\{(u,v) : (u,v) \in E\}$, we call $oracle( (V,(E\backslash F_{v} ) \cup \{f\}))$ for every $f \in F_{v}$ until there is a positive response of the oracle for a particular $f=(u,v) \in F_{v}$ (there exists a such $f$ because $G$ has a perfect matching). We put $f$ in $M$ and update $G=(V\backslash \{u,v\},E\backslash (F_{v} \cup G))$ where $G=\{(u,w) \in E\}$. \\
-   We repeat this last part until $G$ is an empty graph. \\\\ 
+   Then we take a vertex $v$ from the updated graph $\widetilde{G}=(\widetilde{V},\widetilde{E})$. Let $F_{v}=\{(u,v) : (u,v) \in \widetilde{E}\}$, we call $oracle( (\widetilde{V},(\widetilde{E}\backslash F_{v} ) \cup \{f\}))$ for every $f \in F_{v}$ until there is a positive response of the oracle for a particular $f=(u,v) \in F_{v}$ (there exists a such $f$ because $\widetilde{G}$ has a perfect matching). We put $f$ in $M$ and update $\widetilde{G}=(\widetilde{V}\backslash \{u,v\},\widetilde{E}\backslash (F_{v} \cup H))$ where $H=\{(u,w) \in \widetilde{E}\}$. \\
+   We repeat this last part until $\widetilde{G}$ is an empty graph. \\\\ 
  
 At the end, $M$ is a maximum cardinality matching of the graph $G$ obtained with at most $|V|+|E|$ calls to the oracle.
   \end{document}
